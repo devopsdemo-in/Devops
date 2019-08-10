@@ -1,0 +1,1118 @@
+
+root@ip-172-31-34-222:/opt# 
+root@ip-172-31-34-222:/opt# 
+root@ip-172-31-34-222:/opt# apt-get update -y
+Hit:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease              
+Reading package lists... Done                      
+root@ip-172-31-34-222:/opt# wget http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.20/bin/apache-tomcat-9.0.20.tar.gz
+--2019-05-19 05:14:26--  http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.20/bin/apache-tomcat-9.0.20.tar.gz
+Resolving mirrors.estointernet.in (mirrors.estointernet.in)... 103.123.235.250, 2403:8940:ffff:1::f
+Connecting to mirrors.estointernet.in (mirrors.estointernet.in)|103.123.235.250|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 10851264 (10M) [application/octet-stream]
+Saving to: ‘apache-tomcat-9.0.20.tar.gz’
+
+apache-tomcat-9.0.2 100%[===================>]  10.35M  1.73MB/s    in 7.3s    
+
+2019-05-19 05:14:34 (1.42 MB/s) - ‘apache-tomcat-9.0.20.tar.gz’ saved [10851264/10851264]
+
+root@ip-172-31-34-222:/opt# ls
+apache-maven-3.6.0.zip       jdk-8u211-linux-x64.rpm
+apache-maven-3.6.0.zipapt    jdk-8u211-linux-x64.rpm.1
+apache-tomcat-9.0.20.tar.gz  jdk-8u211-linux-x64.rpm.2
+root@ip-172-31-34-222:/opt# tar -xvf apache-tomcat-9.0.20.tar.gz 
+apache-tomcat-9.0.20/conf/
+apache-tomcat-9.0.20/conf/catalina.policy
+apache-tomcat-9.0.20/conf/catalina.properties
+apache-tomcat-9.0.20/conf/context.xml
+apache-tomcat-9.0.20/conf/jaspic-providers.xml
+apache-tomcat-9.0.20/conf/jaspic-providers.xsd
+apache-tomcat-9.0.20/conf/logging.properties
+apache-tomcat-9.0.20/conf/server.xml
+apache-tomcat-9.0.20/conf/tomcat-users.xml
+apache-tomcat-9.0.20/conf/tomcat-users.xsd
+apache-tomcat-9.0.20/conf/web.xml
+apache-tomcat-9.0.20/bin/
+apache-tomcat-9.0.20/lib/
+apache-tomcat-9.0.20/logs/
+apache-tomcat-9.0.20/temp/
+apache-tomcat-9.0.20/webapps/
+apache-tomcat-9.0.20/webapps/ROOT/
+apache-tomcat-9.0.20/webapps/ROOT/WEB-INF/
+apache-tomcat-9.0.20/webapps/docs/
+apache-tomcat-9.0.20/webapps/docs/WEB-INF/
+apache-tomcat-9.0.20/webapps/docs/api/
+apache-tomcat-9.0.20/webapps/docs/appdev/
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/docs/
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/src/
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/src/mypackage/
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/web/
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/web/WEB-INF/
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/web/images/
+apache-tomcat-9.0.20/webapps/docs/architecture/
+apache-tomcat-9.0.20/webapps/docs/architecture/requestProcess/
+apache-tomcat-9.0.20/webapps/docs/architecture/startup/
+apache-tomcat-9.0.20/webapps/docs/config/
+apache-tomcat-9.0.20/webapps/docs/elapi/
+apache-tomcat-9.0.20/webapps/docs/funcspecs/
+apache-tomcat-9.0.20/webapps/docs/images/
+apache-tomcat-9.0.20/webapps/docs/images/fonts/
+apache-tomcat-9.0.20/webapps/docs/jspapi/
+apache-tomcat-9.0.20/webapps/docs/servletapi/
+apache-tomcat-9.0.20/webapps/docs/tribes/
+apache-tomcat-9.0.20/webapps/docs/websocketapi/
+apache-tomcat-9.0.20/webapps/examples/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/cal/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/checkbox/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/colors/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/compressionFilters/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/dates/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/error/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/examples/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/filters/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/http2/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/el/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/listeners/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/nonblocking/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/num/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/sessions/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/trailers/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/util/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/validators/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/chat/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/jsp/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/jsp2/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/jsp/applet/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/lib/
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/tags/
+apache-tomcat-9.0.20/webapps/examples/jsp/
+apache-tomcat-9.0.20/webapps/examples/jsp/async/
+apache-tomcat-9.0.20/webapps/examples/jsp/cal/
+apache-tomcat-9.0.20/webapps/examples/jsp/checkbox/
+apache-tomcat-9.0.20/webapps/examples/jsp/colors/
+apache-tomcat-9.0.20/webapps/examples/jsp/dates/
+apache-tomcat-9.0.20/webapps/examples/jsp/error/
+apache-tomcat-9.0.20/webapps/examples/jsp/forward/
+apache-tomcat-9.0.20/webapps/examples/jsp/images/
+apache-tomcat-9.0.20/webapps/examples/jsp/include/
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspattribute/
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspx/
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/misc/
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/
+apache-tomcat-9.0.20/webapps/examples/jsp/jsptoserv/
+apache-tomcat-9.0.20/webapps/examples/jsp/num/
+apache-tomcat-9.0.20/webapps/examples/jsp/plugin/
+apache-tomcat-9.0.20/webapps/examples/jsp/plugin/applet/
+apache-tomcat-9.0.20/webapps/examples/jsp/security/
+apache-tomcat-9.0.20/webapps/examples/jsp/security/protected/
+apache-tomcat-9.0.20/webapps/examples/jsp/sessions/
+apache-tomcat-9.0.20/webapps/examples/jsp/simpletag/
+apache-tomcat-9.0.20/webapps/examples/jsp/snp/
+apache-tomcat-9.0.20/webapps/examples/jsp/tagplugin/
+apache-tomcat-9.0.20/webapps/examples/jsp/xml/
+apache-tomcat-9.0.20/webapps/examples/servlets/
+apache-tomcat-9.0.20/webapps/examples/servlets/images/
+apache-tomcat-9.0.20/webapps/examples/servlets/nonblocking/
+apache-tomcat-9.0.20/webapps/examples/websocket/
+apache-tomcat-9.0.20/webapps/host-manager/
+apache-tomcat-9.0.20/webapps/host-manager/META-INF/
+apache-tomcat-9.0.20/webapps/host-manager/WEB-INF/
+apache-tomcat-9.0.20/webapps/host-manager/WEB-INF/jsp/
+apache-tomcat-9.0.20/webapps/host-manager/images/
+apache-tomcat-9.0.20/webapps/manager/
+apache-tomcat-9.0.20/webapps/manager/META-INF/
+apache-tomcat-9.0.20/webapps/manager/WEB-INF/
+apache-tomcat-9.0.20/webapps/manager/WEB-INF/jsp/
+apache-tomcat-9.0.20/webapps/manager/images/
+apache-tomcat-9.0.20/work/
+apache-tomcat-9.0.20/BUILDING.txt
+apache-tomcat-9.0.20/CONTRIBUTING.md
+apache-tomcat-9.0.20/LICENSE
+apache-tomcat-9.0.20/NOTICE
+apache-tomcat-9.0.20/README.md
+apache-tomcat-9.0.20/RELEASE-NOTES
+apache-tomcat-9.0.20/RUNNING.txt
+apache-tomcat-9.0.20/bin/bootstrap.jar
+apache-tomcat-9.0.20/bin/catalina-tasks.xml
+apache-tomcat-9.0.20/bin/catalina.bat
+apache-tomcat-9.0.20/bin/ciphers.bat
+apache-tomcat-9.0.20/bin/commons-daemon-native.tar.gz
+apache-tomcat-9.0.20/bin/commons-daemon.jar
+apache-tomcat-9.0.20/bin/configtest.bat
+apache-tomcat-9.0.20/bin/digest.bat
+apache-tomcat-9.0.20/bin/makebase.bat
+apache-tomcat-9.0.20/bin/setclasspath.bat
+apache-tomcat-9.0.20/bin/shutdown.bat
+apache-tomcat-9.0.20/bin/startup.bat
+apache-tomcat-9.0.20/bin/tomcat-juli.jar
+apache-tomcat-9.0.20/bin/tomcat-native.tar.gz
+apache-tomcat-9.0.20/bin/tool-wrapper.bat
+apache-tomcat-9.0.20/bin/version.bat
+apache-tomcat-9.0.20/lib/annotations-api.jar
+apache-tomcat-9.0.20/lib/catalina-ant.jar
+apache-tomcat-9.0.20/lib/catalina-ha.jar
+apache-tomcat-9.0.20/lib/catalina-storeconfig.jar
+apache-tomcat-9.0.20/lib/catalina-tribes.jar
+apache-tomcat-9.0.20/lib/catalina.jar
+apache-tomcat-9.0.20/lib/ecj-4.10.jar
+apache-tomcat-9.0.20/lib/el-api.jar
+apache-tomcat-9.0.20/lib/jasper-el.jar
+apache-tomcat-9.0.20/lib/jasper.jar
+apache-tomcat-9.0.20/lib/jaspic-api.jar
+apache-tomcat-9.0.20/lib/jsp-api.jar
+apache-tomcat-9.0.20/lib/servlet-api.jar
+apache-tomcat-9.0.20/lib/tomcat-api.jar
+apache-tomcat-9.0.20/lib/tomcat-coyote.jar
+apache-tomcat-9.0.20/lib/tomcat-dbcp.jar
+apache-tomcat-9.0.20/lib/tomcat-i18n-cs.jar
+apache-tomcat-9.0.20/lib/tomcat-i18n-de.jar
+apache-tomcat-9.0.20/lib/tomcat-i18n-es.jar
+apache-tomcat-9.0.20/lib/tomcat-i18n-fr.jar
+apache-tomcat-9.0.20/lib/tomcat-i18n-ja.jar
+apache-tomcat-9.0.20/lib/tomcat-i18n-ko.jar
+apache-tomcat-9.0.20/lib/tomcat-i18n-pt-BR.jar
+apache-tomcat-9.0.20/lib/tomcat-i18n-ru.jar
+apache-tomcat-9.0.20/lib/tomcat-i18n-zh-CN.jar
+apache-tomcat-9.0.20/lib/tomcat-jdbc.jar
+apache-tomcat-9.0.20/lib/tomcat-jni.jar
+apache-tomcat-9.0.20/lib/tomcat-util-scan.jar
+apache-tomcat-9.0.20/lib/tomcat-util.jar
+apache-tomcat-9.0.20/lib/tomcat-websocket.jar
+apache-tomcat-9.0.20/lib/websocket-api.jar
+apache-tomcat-9.0.20/temp/safeToDelete.tmp
+apache-tomcat-9.0.20/webapps/ROOT/RELEASE-NOTES.txt
+apache-tomcat-9.0.20/webapps/ROOT/WEB-INF/web.xml
+apache-tomcat-9.0.20/webapps/ROOT/asf-logo-wide.svg
+apache-tomcat-9.0.20/webapps/ROOT/bg-button.png
+apache-tomcat-9.0.20/webapps/ROOT/bg-middle.png
+apache-tomcat-9.0.20/webapps/ROOT/bg-nav.png
+apache-tomcat-9.0.20/webapps/ROOT/bg-upper.png
+apache-tomcat-9.0.20/webapps/ROOT/favicon.ico
+apache-tomcat-9.0.20/webapps/ROOT/index.jsp
+apache-tomcat-9.0.20/webapps/ROOT/tomcat-power.gif
+apache-tomcat-9.0.20/webapps/ROOT/tomcat.css
+apache-tomcat-9.0.20/webapps/ROOT/tomcat.gif
+apache-tomcat-9.0.20/webapps/ROOT/tomcat.png
+apache-tomcat-9.0.20/webapps/ROOT/tomcat.svg
+apache-tomcat-9.0.20/webapps/docs/BUILDING.txt
+apache-tomcat-9.0.20/webapps/docs/RELEASE-NOTES.txt
+apache-tomcat-9.0.20/webapps/docs/RUNNING.txt
+apache-tomcat-9.0.20/webapps/docs/WEB-INF/web.xml
+apache-tomcat-9.0.20/webapps/docs/aio.html
+apache-tomcat-9.0.20/webapps/docs/api/index.html
+apache-tomcat-9.0.20/webapps/docs/appdev/build.xml.txt
+apache-tomcat-9.0.20/webapps/docs/appdev/deployment.html
+apache-tomcat-9.0.20/webapps/docs/appdev/index.html
+apache-tomcat-9.0.20/webapps/docs/appdev/installation.html
+apache-tomcat-9.0.20/webapps/docs/appdev/introduction.html
+apache-tomcat-9.0.20/webapps/docs/appdev/processes.html
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/build.xml
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/docs/README.txt
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/index.html
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/sample.war
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/src/mypackage/Hello.java
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/web/WEB-INF/web.xml
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/web/hello.jsp
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/web/images/tomcat.gif
+apache-tomcat-9.0.20/webapps/docs/appdev/sample/web/index.html
+apache-tomcat-9.0.20/webapps/docs/appdev/source.html
+apache-tomcat-9.0.20/webapps/docs/appdev/web.xml.txt
+apache-tomcat-9.0.20/webapps/docs/apr.html
+apache-tomcat-9.0.20/webapps/docs/architecture/index.html
+apache-tomcat-9.0.20/webapps/docs/architecture/overview.html
+apache-tomcat-9.0.20/webapps/docs/architecture/requestProcess.html
+apache-tomcat-9.0.20/webapps/docs/architecture/requestProcess/authentication-process.png
+apache-tomcat-9.0.20/webapps/docs/architecture/requestProcess/request-process.png
+apache-tomcat-9.0.20/webapps/docs/architecture/startup.html
+apache-tomcat-9.0.20/webapps/docs/architecture/startup/serverStartup.pdf
+apache-tomcat-9.0.20/webapps/docs/architecture/startup/serverStartup.txt
+apache-tomcat-9.0.20/webapps/docs/balancer-howto.html
+apache-tomcat-9.0.20/webapps/docs/building.html
+apache-tomcat-9.0.20/webapps/docs/cgi-howto.html
+apache-tomcat-9.0.20/webapps/docs/changelog.html
+apache-tomcat-9.0.20/webapps/docs/class-loader-howto.html
+apache-tomcat-9.0.20/webapps/docs/cluster-howto.html
+apache-tomcat-9.0.20/webapps/docs/comments.html
+apache-tomcat-9.0.20/webapps/docs/config/ajp.html
+apache-tomcat-9.0.20/webapps/docs/config/automatic-deployment.html
+apache-tomcat-9.0.20/webapps/docs/config/cluster-channel.html
+apache-tomcat-9.0.20/webapps/docs/config/cluster-deployer.html
+apache-tomcat-9.0.20/webapps/docs/config/cluster-interceptor.html
+apache-tomcat-9.0.20/webapps/docs/config/cluster-listener.html
+apache-tomcat-9.0.20/webapps/docs/config/cluster-manager.html
+apache-tomcat-9.0.20/webapps/docs/config/cluster-membership.html
+apache-tomcat-9.0.20/webapps/docs/config/cluster-receiver.html
+apache-tomcat-9.0.20/webapps/docs/config/cluster-sender.html
+apache-tomcat-9.0.20/webapps/docs/config/cluster-valve.html
+apache-tomcat-9.0.20/webapps/docs/config/cluster.html
+apache-tomcat-9.0.20/webapps/docs/config/context.html
+apache-tomcat-9.0.20/webapps/docs/config/cookie-processor.html
+apache-tomcat-9.0.20/webapps/docs/config/credentialhandler.html
+apache-tomcat-9.0.20/webapps/docs/config/engine.html
+apache-tomcat-9.0.20/webapps/docs/config/executor.html
+apache-tomcat-9.0.20/webapps/docs/config/filter.html
+apache-tomcat-9.0.20/webapps/docs/config/globalresources.html
+apache-tomcat-9.0.20/webapps/docs/config/host.html
+apache-tomcat-9.0.20/webapps/docs/config/http.html
+apache-tomcat-9.0.20/webapps/docs/config/http2.html
+apache-tomcat-9.0.20/webapps/docs/config/index.html
+apache-tomcat-9.0.20/webapps/docs/config/jar-scan-filter.html
+apache-tomcat-9.0.20/webapps/docs/config/jar-scanner.html
+apache-tomcat-9.0.20/webapps/docs/config/jaspic.html
+apache-tomcat-9.0.20/webapps/docs/config/listeners.html
+apache-tomcat-9.0.20/webapps/docs/config/loader.html
+apache-tomcat-9.0.20/webapps/docs/config/manager.html
+apache-tomcat-9.0.20/webapps/docs/config/realm.html
+apache-tomcat-9.0.20/webapps/docs/config/resources.html
+apache-tomcat-9.0.20/webapps/docs/config/server.html
+apache-tomcat-9.0.20/webapps/docs/config/service.html
+apache-tomcat-9.0.20/webapps/docs/config/sessionidgenerator.html
+apache-tomcat-9.0.20/webapps/docs/config/systemprops.html
+apache-tomcat-9.0.20/webapps/docs/config/valve.html
+apache-tomcat-9.0.20/webapps/docs/connectors.html
+apache-tomcat-9.0.20/webapps/docs/default-servlet.html
+apache-tomcat-9.0.20/webapps/docs/deployer-howto.html
+apache-tomcat-9.0.20/webapps/docs/developers.html
+apache-tomcat-9.0.20/webapps/docs/elapi/index.html
+apache-tomcat-9.0.20/webapps/docs/extras.html
+apache-tomcat-9.0.20/webapps/docs/funcspecs/fs-admin-apps.html
+apache-tomcat-9.0.20/webapps/docs/funcspecs/fs-admin-objects.html
+apache-tomcat-9.0.20/webapps/docs/funcspecs/fs-admin-opers.html
+apache-tomcat-9.0.20/webapps/docs/funcspecs/fs-default.html
+apache-tomcat-9.0.20/webapps/docs/funcspecs/fs-jdbc-realm.html
+apache-tomcat-9.0.20/webapps/docs/funcspecs/fs-jndi-realm.html
+apache-tomcat-9.0.20/webapps/docs/funcspecs/fs-memory-realm.html
+apache-tomcat-9.0.20/webapps/docs/funcspecs/index.html
+apache-tomcat-9.0.20/webapps/docs/funcspecs/mbean-names.html
+apache-tomcat-9.0.20/webapps/docs/host-manager-howto.html
+apache-tomcat-9.0.20/webapps/docs/html-host-manager-howto.html
+apache-tomcat-9.0.20/webapps/docs/html-manager-howto.html
+apache-tomcat-9.0.20/webapps/docs/images/add.gif
+apache-tomcat-9.0.20/webapps/docs/images/asf-logo.svg
+apache-tomcat-9.0.20/webapps/docs/images/code.gif
+apache-tomcat-9.0.20/webapps/docs/images/cors-flowchart.png
+apache-tomcat-9.0.20/webapps/docs/images/design.gif
+apache-tomcat-9.0.20/webapps/docs/images/docs-stylesheet.css
+apache-tomcat-9.0.20/webapps/docs/images/docs.gif
+apache-tomcat-9.0.20/webapps/docs/images/fix.gif
+apache-tomcat-9.0.20/webapps/docs/images/fonts/OpenSans400.woff
+apache-tomcat-9.0.20/webapps/docs/images/fonts/OpenSans400italic.woff
+apache-tomcat-9.0.20/webapps/docs/images/fonts/OpenSans600.woff
+apache-tomcat-9.0.20/webapps/docs/images/fonts/OpenSans600italic.woff
+apache-tomcat-9.0.20/webapps/docs/images/fonts/OpenSans700.woff
+apache-tomcat-9.0.20/webapps/docs/images/fonts/OpenSans700italic.woff
+apache-tomcat-9.0.20/webapps/docs/images/fonts/fonts.css
+apache-tomcat-9.0.20/webapps/docs/images/tomcat.gif
+apache-tomcat-9.0.20/webapps/docs/images/tomcat.png
+apache-tomcat-9.0.20/webapps/docs/images/update.gif
+apache-tomcat-9.0.20/webapps/docs/images/void.gif
+apache-tomcat-9.0.20/webapps/docs/index.html
+apache-tomcat-9.0.20/webapps/docs/introduction.html
+apache-tomcat-9.0.20/webapps/docs/jasper-howto.html
+apache-tomcat-9.0.20/webapps/docs/jdbc-pool.html
+apache-tomcat-9.0.20/webapps/docs/jndi-datasource-examples-howto.html
+apache-tomcat-9.0.20/webapps/docs/jndi-resources-howto.html
+apache-tomcat-9.0.20/webapps/docs/jspapi/index.html
+apache-tomcat-9.0.20/webapps/docs/logging.html
+apache-tomcat-9.0.20/webapps/docs/manager-howto.html
+apache-tomcat-9.0.20/webapps/docs/maven-jars.html
+apache-tomcat-9.0.20/webapps/docs/mbeans-descriptors-howto.html
+apache-tomcat-9.0.20/webapps/docs/mbeans-descriptors.dtd
+apache-tomcat-9.0.20/webapps/docs/monitoring.html
+apache-tomcat-9.0.20/webapps/docs/proxy-howto.html
+apache-tomcat-9.0.20/webapps/docs/realm-howto.html
+apache-tomcat-9.0.20/webapps/docs/rewrite.html
+apache-tomcat-9.0.20/webapps/docs/security-howto.html
+apache-tomcat-9.0.20/webapps/docs/security-manager-howto.html
+apache-tomcat-9.0.20/webapps/docs/servletapi/index.html
+apache-tomcat-9.0.20/webapps/docs/setup.html
+apache-tomcat-9.0.20/webapps/docs/ssi-howto.html
+apache-tomcat-9.0.20/webapps/docs/ssl-howto.html
+apache-tomcat-9.0.20/webapps/docs/tribes/developers.html
+apache-tomcat-9.0.20/webapps/docs/tribes/faq.html
+apache-tomcat-9.0.20/webapps/docs/tribes/interceptors.html
+apache-tomcat-9.0.20/webapps/docs/tribes/introduction.html
+apache-tomcat-9.0.20/webapps/docs/tribes/membership.html
+apache-tomcat-9.0.20/webapps/docs/tribes/setup.html
+apache-tomcat-9.0.20/webapps/docs/tribes/status.html
+apache-tomcat-9.0.20/webapps/docs/tribes/transport.html
+apache-tomcat-9.0.20/webapps/docs/virtual-hosting-howto.html
+apache-tomcat-9.0.20/webapps/docs/web-socket-howto.html
+apache-tomcat-9.0.20/webapps/docs/websocketapi/index.html
+apache-tomcat-9.0.20/webapps/docs/windows-auth-howto.html
+apache-tomcat-9.0.20/webapps/docs/windows-service-howto.html
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/CookieExample.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/CookieExample.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/HelloWorldExample.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/HelloWorldExample.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/LocalStrings.properties
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/LocalStrings_cs.properties
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/LocalStrings_de.properties
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/LocalStrings_es.properties
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/LocalStrings_fr.properties
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/LocalStrings_ja.properties
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/LocalStrings_ko.properties
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/LocalStrings_pt.properties
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/LocalStrings_pt_BR.properties
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/LocalStrings_ru.properties
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/LocalStrings_zh_CN.properties
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/RequestHeaderExample.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/RequestHeaderExample.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/RequestInfoExample.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/RequestInfoExample.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/RequestParamExample.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/RequestParamExample.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/ServletToJsp.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/ServletToJsp.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/SessionExample.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/SessionExample.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Async0$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Async0.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Async0.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Async1$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Async1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Async1.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Async2$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Async2.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Async2.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Async3.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Async3.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Stockticker$Stock.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Stockticker$TickListener.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Stockticker.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/async/Stockticker.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/cal/Entries.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/cal/Entries.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/cal/Entry.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/cal/Entry.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/cal/JspCalendar.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/cal/JspCalendar.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/cal/TableBean.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/cal/TableBean.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/checkbox/CheckTest.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/checkbox/CheckTest.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/colors/ColorGameBean.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/colors/ColorGameBean.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilter.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilter.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilterTestServlet.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilterTestServlet.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/compressionFilters/CompressionResponseStream.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/compressionFilters/CompressionResponseStream.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/compressionFilters/CompressionServletResponseWrapper.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/compressionFilters/CompressionServletResponseWrapper.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/dates/JspCalendar.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/dates/JspCalendar.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/error/Smart.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/error/Smart.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/examples/ExampleTagBase.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/examples/ExampleTagBase.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/examples/FooTag.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/examples/FooTag.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/examples/LogTag.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/examples/LogTag.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/examples/ValuesTag.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/examples/ValuesTag.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/filters/ExampleFilter.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/http2/SimpleImagePush.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/http2/SimpleImagePush.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/FindBookSimpleTag.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/FindBookSimpleTag.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/HelloWorldSimpleTag.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/HelloWorldSimpleTag.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/RepeatSimpleTag.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/RepeatSimpleTag.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/ShuffleSimpleTag.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/ShuffleSimpleTag.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/TileSimpleTag.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/TileSimpleTag.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/listeners/ContextListener.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/listeners/ContextListener.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/listeners/SessionListener.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/listeners/SessionListener.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter$CounterListener.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter$NumberWriterListener.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/num/NumberGuessBean.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/num/NumberGuessBean.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/sessions/DummyCart.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/sessions/DummyCart.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers$TrailerFieldSupplier.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/util/CookieFilter.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/util/CookieFilter.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/util/HTMLFilter.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/util/HTMLFilter.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/validators/DebugValidator.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/validators/DebugValidator.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/ExamplesConfig.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/ExamplesConfig.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/chat/ChatAnnotation.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/chat/ChatAnnotation.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/Client$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/Client.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/Client.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage$ParseException.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardContextListener.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardContextListener.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$2.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$3$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$3.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$1$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$2.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$MessageType.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$Player.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/Room.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/Room.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/AbstractWebsocketMessage.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/AbstractWebsocketMessage.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/BinaryWebsocketMessage.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/BinaryWebsocketMessage.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/CloseWebsocketMessage.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/CloseWebsocketMessage.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation$CompletedFuture.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerBinary.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerText.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoStreamAnnotation.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/EchoStreamAnnotation.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/echo/servers.json
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/Direction.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/Direction.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/Location$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/Location.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/Location.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/Snake.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/Snake.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer$1.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.class
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/jsp2/jsp2-example-taglib.tld
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/jsp/applet/Clock2.java
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/jsp/debug-taglib.tld
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/jsp/example-taglib.tld
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/tags/displayProducts.tag
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/tags/helloWorld.tag
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/tags/panel.tag
+apache-tomcat-9.0.20/webapps/examples/WEB-INF/web.xml
+apache-tomcat-9.0.20/webapps/examples/index.html
+apache-tomcat-9.0.20/webapps/examples/jsp/async/async1.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/async/async1.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/async/async3.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/async/async3.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/async/index.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/async/index.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/cal/Entries.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/cal/Entry.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/cal/JspCalendar.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/cal/TableBean.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/cal/cal1.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/cal/cal1.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/cal/cal2.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/cal/cal2.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/cal/calendar.html
+apache-tomcat-9.0.20/webapps/examples/jsp/cal/login.html
+apache-tomcat-9.0.20/webapps/examples/jsp/checkbox/CheckTest.html
+apache-tomcat-9.0.20/webapps/examples/jsp/checkbox/check.html
+apache-tomcat-9.0.20/webapps/examples/jsp/checkbox/checkresult.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/checkbox/checkresult.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/checkbox/cresult.html
+apache-tomcat-9.0.20/webapps/examples/jsp/colors/ColorGameBean.html
+apache-tomcat-9.0.20/webapps/examples/jsp/colors/clr.html
+apache-tomcat-9.0.20/webapps/examples/jsp/colors/colors.html
+apache-tomcat-9.0.20/webapps/examples/jsp/colors/colrs.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/colors/colrs.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/dates/date.html
+apache-tomcat-9.0.20/webapps/examples/jsp/dates/date.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/dates/date.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/error/er.html
+apache-tomcat-9.0.20/webapps/examples/jsp/error/err.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/error/err.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/error/error.html
+apache-tomcat-9.0.20/webapps/examples/jsp/error/errorpge.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/error/errorpge.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/forward/forward.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/forward/forward.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/forward/fwd.html
+apache-tomcat-9.0.20/webapps/examples/jsp/forward/one.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/forward/one.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/forward/two.html
+apache-tomcat-9.0.20/webapps/examples/jsp/images/code.gif
+apache-tomcat-9.0.20/webapps/examples/jsp/images/execute.gif
+apache-tomcat-9.0.20/webapps/examples/jsp/images/return.gif
+apache-tomcat-9.0.20/webapps/examples/jsp/include/foo.html
+apache-tomcat-9.0.20/webapps/examples/jsp/include/foo.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/include/foo.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/include/inc.html
+apache-tomcat-9.0.20/webapps/examples/jsp/include/include.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/include/include.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/index.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/Functions.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/ValuesBean.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/ValuesTag.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/basic-arithmetic.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/basic-arithmetic.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/basic-arithmetic.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/basic-comparisons.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/basic-comparisons.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/basic-comparisons.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/composite.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/composite.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/composite.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/functions.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/functions.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/functions.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/implicit-objects.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/implicit-objects.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/el/implicit-objects.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspattribute/FooBean.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspattribute/HelloWorldSimpleTag.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspattribute/ShuffleSimpleTag.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspattribute/TileSimpleTag.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspattribute/jspattribute.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspattribute/jspattribute.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspattribute/jspattribute.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspattribute/shuffle.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspattribute/shuffle.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspattribute/shuffle.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspx/basic.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspx/basic.jspx
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspx/basic.jspx.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspx/svgexample.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspx/textRotate.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspx/textRotate.jpg
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspx/textRotate.jspx
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/jspx/textRotate.jspx.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/misc/EchoAttributesTag.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/misc/coda.jspf
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/misc/coda.jspf.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/misc/config.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/misc/config.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/misc/config.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/misc/dynamicattrs.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/misc/dynamicattrs.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/misc/dynamicattrs.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/misc/prelude.jspf
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/misc/prelude.jspf.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/BookBean.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/FindBookSimpleTag.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/Functions.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/HelloWorldSimpleTag.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/RepeatSimpleTag.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/book.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/book.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/book.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/hello.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/hello.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/hello.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/repeat.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/repeat.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/simpletag/repeat.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/displayProducts.tag.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/hello.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/hello.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/hello.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/helloWorld.tag.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/panel.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/panel.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/panel.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/panel.tag.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/products.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/products.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsp2/tagfiles/products.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsptoserv/ServletToJsp.java.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsptoserv/hello.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsptoserv/hello.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsptoserv/jsptoservlet.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/jsptoserv/jsptoservlet.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/jsptoserv/jts.html
+apache-tomcat-9.0.20/webapps/examples/jsp/num/numguess.html
+apache-tomcat-9.0.20/webapps/examples/jsp/num/numguess.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/num/numguess.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/plugin/applet/Clock2.class
+apache-tomcat-9.0.20/webapps/examples/jsp/plugin/applet/Clock2.java
+apache-tomcat-9.0.20/webapps/examples/jsp/plugin/plugin.html
+apache-tomcat-9.0.20/webapps/examples/jsp/plugin/plugin.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/plugin/plugin.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/security/protected/error.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/security/protected/error.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/security/protected/index.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/security/protected/index.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/security/protected/login.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/security/protected/login.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/sessions/DummyCart.html
+apache-tomcat-9.0.20/webapps/examples/jsp/sessions/carts.html
+apache-tomcat-9.0.20/webapps/examples/jsp/sessions/carts.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/sessions/carts.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/sessions/crt.html
+apache-tomcat-9.0.20/webapps/examples/jsp/simpletag/foo.html
+apache-tomcat-9.0.20/webapps/examples/jsp/simpletag/foo.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/simpletag/foo.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/snp/snoop.html
+apache-tomcat-9.0.20/webapps/examples/jsp/snp/snoop.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/snp/snoop.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/tagplugin/choose.html
+apache-tomcat-9.0.20/webapps/examples/jsp/tagplugin/choose.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/tagplugin/choose.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/tagplugin/foreach.html
+apache-tomcat-9.0.20/webapps/examples/jsp/tagplugin/foreach.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/tagplugin/foreach.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/tagplugin/howto.html
+apache-tomcat-9.0.20/webapps/examples/jsp/tagplugin/if.html
+apache-tomcat-9.0.20/webapps/examples/jsp/tagplugin/if.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/tagplugin/if.jsp.html
+apache-tomcat-9.0.20/webapps/examples/jsp/tagplugin/notes.html
+apache-tomcat-9.0.20/webapps/examples/jsp/xml/xml.html
+apache-tomcat-9.0.20/webapps/examples/jsp/xml/xml.jsp
+apache-tomcat-9.0.20/webapps/examples/jsp/xml/xml.jsp.html
+apache-tomcat-9.0.20/webapps/examples/servlets/cookies.html
+apache-tomcat-9.0.20/webapps/examples/servlets/helloworld.html
+apache-tomcat-9.0.20/webapps/examples/servlets/images/code.gif
+apache-tomcat-9.0.20/webapps/examples/servlets/images/execute.gif
+apache-tomcat-9.0.20/webapps/examples/servlets/images/return.gif
+apache-tomcat-9.0.20/webapps/examples/servlets/index.html
+apache-tomcat-9.0.20/webapps/examples/servlets/nonblocking/bytecounter.html
+apache-tomcat-9.0.20/webapps/examples/servlets/reqheaders.html
+apache-tomcat-9.0.20/webapps/examples/servlets/reqinfo.html
+apache-tomcat-9.0.20/webapps/examples/servlets/reqparams.html
+apache-tomcat-9.0.20/webapps/examples/servlets/sessions.html
+apache-tomcat-9.0.20/webapps/examples/websocket/chat.xhtml
+apache-tomcat-9.0.20/webapps/examples/websocket/drawboard.xhtml
+apache-tomcat-9.0.20/webapps/examples/websocket/echo.xhtml
+apache-tomcat-9.0.20/webapps/examples/websocket/index.xhtml
+apache-tomcat-9.0.20/webapps/examples/websocket/snake.xhtml
+apache-tomcat-9.0.20/webapps/host-manager/META-INF/context.xml
+apache-tomcat-9.0.20/webapps/host-manager/WEB-INF/jsp/401.jsp
+apache-tomcat-9.0.20/webapps/host-manager/WEB-INF/jsp/403.jsp
+apache-tomcat-9.0.20/webapps/host-manager/WEB-INF/jsp/404.jsp
+apache-tomcat-9.0.20/webapps/host-manager/WEB-INF/web.xml
+apache-tomcat-9.0.20/webapps/host-manager/images/asf-logo.svg
+apache-tomcat-9.0.20/webapps/host-manager/images/tomcat.gif
+apache-tomcat-9.0.20/webapps/host-manager/index.jsp
+apache-tomcat-9.0.20/webapps/host-manager/manager.xml
+apache-tomcat-9.0.20/webapps/manager/META-INF/context.xml
+apache-tomcat-9.0.20/webapps/manager/WEB-INF/jsp/401.jsp
+apache-tomcat-9.0.20/webapps/manager/WEB-INF/jsp/403.jsp
+apache-tomcat-9.0.20/webapps/manager/WEB-INF/jsp/404.jsp
+apache-tomcat-9.0.20/webapps/manager/WEB-INF/jsp/connectorCerts.jsp
+apache-tomcat-9.0.20/webapps/manager/WEB-INF/jsp/connectorCiphers.jsp
+apache-tomcat-9.0.20/webapps/manager/WEB-INF/jsp/connectorTrustedCerts.jsp
+apache-tomcat-9.0.20/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
+apache-tomcat-9.0.20/webapps/manager/WEB-INF/jsp/sessionsList.jsp
+apache-tomcat-9.0.20/webapps/manager/WEB-INF/web.xml
+apache-tomcat-9.0.20/webapps/manager/images/asf-logo.svg
+apache-tomcat-9.0.20/webapps/manager/images/tomcat.gif
+apache-tomcat-9.0.20/webapps/manager/index.jsp
+apache-tomcat-9.0.20/webapps/manager/status.xsd
+apache-tomcat-9.0.20/webapps/manager/xform.xsl
+apache-tomcat-9.0.20/bin/catalina.sh
+apache-tomcat-9.0.20/bin/ciphers.sh
+apache-tomcat-9.0.20/bin/configtest.sh
+apache-tomcat-9.0.20/bin/daemon.sh
+apache-tomcat-9.0.20/bin/digest.sh
+apache-tomcat-9.0.20/bin/makebase.sh
+apache-tomcat-9.0.20/bin/setclasspath.sh
+apache-tomcat-9.0.20/bin/shutdown.sh
+apache-tomcat-9.0.20/bin/startup.sh
+apache-tomcat-9.0.20/bin/tool-wrapper.sh
+apache-tomcat-9.0.20/bin/version.sh
+root@ip-172-31-34-222:/opt# ls
+apache-maven-3.6.0.zip       jdk-8u211-linux-x64.rpm
+apache-maven-3.6.0.zipapt    jdk-8u211-linux-x64.rpm.1
+apache-tomcat-9.0.20         jdk-8u211-linux-x64.rpm.2
+apache-tomcat-9.0.20.tar.gz
+root@ip-172-31-34-222:/opt# cd apache-tomcat-9.0.20/
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20# ls
+BUILDING.txt     LICENSE  README.md      RUNNING.txt  conf  logs  webapps
+CONTRIBUTING.md  NOTICE   RELEASE-NOTES  bin          lib   temp  work
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20# cd bin/
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# ls
+bootstrap.jar                 configtest.sh     shutdown.sh
+catalina-tasks.xml            daemon.sh         startup.bat
+catalina.bat                  digest.bat        startup.sh
+catalina.sh                   digest.sh         tomcat-juli.jar
+ciphers.bat                   makebase.bat      tomcat-native.tar.gz
+ciphers.sh                    makebase.sh       tool-wrapper.bat
+commons-daemon-native.tar.gz  setclasspath.bat  tool-wrapper.sh
+commons-daemon.jar            setclasspath.sh   version.bat
+configtest.bat                shutdown.bat      version.sh
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# chmod u+x *.sh
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# ln -s /opt/apache-tomcat-9.0.16/bin/startup.sh /usr/bin/startTomcat
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# sh ca
+sh: 0: Can't open ca
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# sh catalina.sh start
+Using CATALINA_BASE:   /opt/apache-tomcat-9.0.20
+Using CATALINA_HOME:   /opt/apache-tomcat-9.0.20
+Using CATALINA_TMPDIR: /opt/apache-tomcat-9.0.20/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /opt/apache-tomcat-9.0.20/bin/bootstrap.jar:/opt/apache-tomcat-9.0.20/bin/tomcat-juli.jar
+Tomcat started.
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# cd ..
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20# ls
+BUILDING.txt     LICENSE  README.md      RUNNING.txt  conf  logs  webapps
+CONTRIBUTING.md  NOTICE   RELEASE-NOTES  bin          lib   temp  work
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20# cd conf/
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/conf# ls
+Catalina             context.xml           logging.properties  tomcat-users.xsd
+catalina.policy      jaspic-providers.xml  server.xml          web.xml
+catalina.properties  jaspic-providers.xsd  tomcat-users.xml
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/conf# vi server.xml 
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/conf# vi tomcat-users.xml 
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/conf# ls
+Catalina         catalina.properties  jaspic-providers.xml  logging.properties  tomcat-users.xml  web.xml
+catalina.policy  context.xml          jaspic-providers.xsd  server.xml          tomcat-users.xsd
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/conf# vi context.xml 
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/conf# cd ..
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20# ls
+BUILDING.txt  CONTRIBUTING.md  LICENSE  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  bin  conf  lib  logs  temp  webapps  work
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20# cd bin/
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# ./startup.sh 
+Using CATALINA_BASE:   /opt/apache-tomcat-9.0.20
+Using CATALINA_HOME:   /opt/apache-tomcat-9.0.20
+Using CATALINA_TMPDIR: /opt/apache-tomcat-9.0.20/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /opt/apache-tomcat-9.0.20/bin/bootstrap.jar:/opt/apache-tomcat-9.0.20/bin/tomcat-juli.jar
+Tomcat started.
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# ./shutdown.sh 
+Using CATALINA_BASE:   /opt/apache-tomcat-9.0.20
+Using CATALINA_HOME:   /opt/apache-tomcat-9.0.20
+Using CATALINA_TMPDIR: /opt/apache-tomcat-9.0.20/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /opt/apache-tomcat-9.0.20/bin/bootstrap.jar:/opt/apache-tomcat-9.0.20/bin/tomcat-juli.jar
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# ./startup.sh 
+Using CATALINA_BASE:   /opt/apache-tomcat-9.0.20
+Using CATALINA_HOME:   /opt/apache-tomcat-9.0.20
+Using CATALINA_TMPDIR: /opt/apache-tomcat-9.0.20/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /opt/apache-tomcat-9.0.20/bin/bootstrap.jar:/opt/apache-tomcat-9.0.20/bin/tomcat-juli.jar
+Tomcat started.
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# cd ..
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20# cd conf/
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/conf# ls
+Catalina         catalina.properties  jaspic-providers.xml  logging.properties  tomcat-users.xml  web.xml
+catalina.policy  context.xml          jaspic-providers.xsd  server.xml          tomcat-users.xsd
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/conf# vim context.xml 
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/conf# cd ..
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20# cd webapps/
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/webapps# ls
+ROOT  docs  examples  host-manager  manager
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/webapps# cd manager/META-INF/
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/webapps/manager/META-INF# vim context.xml 
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/webapps/manager/META-INF# cd ../../..
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20# cd bin/
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# ./shutdown.sh 
+Using CATALINA_BASE:   /opt/apache-tomcat-9.0.20
+Using CATALINA_HOME:   /opt/apache-tomcat-9.0.20
+Using CATALINA_TMPDIR: /opt/apache-tomcat-9.0.20/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /opt/apache-tomcat-9.0.20/bin/bootstrap.jar:/opt/apache-tomcat-9.0.20/bin/tomcat-juli.jar
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# ./startup.sh 
+Using CATALINA_BASE:   /opt/apache-tomcat-9.0.20
+Using CATALINA_HOME:   /opt/apache-tomcat-9.0.20
+Using CATALINA_TMPDIR: /opt/apache-tomcat-9.0.20/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /opt/apache-tomcat-9.0.20/bin/bootstrap.jar:/opt/apache-tomcat-9.0.20/bin/tomcat-juli.jar
+Tomcat started.
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/bin# cd
+root@ip-172-31-34-222:~# ls
+kongara  rsr
+root@ip-172-31-34-222:~# cd rsr/
+root@ip-172-31-34-222:~/rsr# pwd
+/home/ubuntu/rsr
+root@ip-172-31-34-222:~/rsr# ls
+Maven-Web-Project
+root@ip-172-31-34-222:~/rsr# cd Maven-Web-Project/
+root@ip-172-31-34-222:~/rsr/Maven-Web-Project# ls
+Jenkinsfile  WebContent  pom.xml  src  target
+root@ip-172-31-34-222:~/rsr/Maven-Web-Project# cd target/
+root@ip-172-31-34-222:~/rsr/Maven-Web-Project/target# ls
+classes  generated-sources  maven-archiver  maven-status  maven-web-project-1.1-SNAPSHOT  maven-web-project-1.1-SNAPSHOT.war
+root@ip-172-31-34-222:~/rsr/Maven-Web-Project/target# pwd
+/home/ubuntu/rsr/Maven-Web-Project/target
+root@ip-172-31-34-222:~/rsr/Maven-Web-Project/target# cd
+root@ip-172-31-34-222:~# git clone git@github.com:devopstrainingblr/maven-web-application.git
+Cloning into 'maven-web-application'...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+root@ip-172-31-34-222:~# cd rsr/
+root@ip-172-31-34-222:~/rsr# git clone https://github.com/devopstrainingblr/maven-web-application.git
+Cloning into 'maven-web-application'...
+remote: Enumerating objects: 225, done.
+remote: Total 225 (delta 0), reused 0 (delta 0), pack-reused 225
+Receiving objects: 100% (225/225), 65.75 KiB | 4.11 MiB/s, done.
+Resolving deltas: 100% (102/102), done.
+root@ip-172-31-34-222:~/rsr# ls
+Maven-Web-Project  maven-web-application
+root@ip-172-31-34-222:~/rsr# cd maven-web-application/
+root@ip-172-31-34-222:~/rsr/maven-web-application# ls
+Jenkinsfile-backup  Jenkinsfile-backup26th  Jenkinsfile-bakcupmarch15  Jenkinsfile-mt  mithuntechnologiespipeLine  pom.xml  project.yaml  src
+root@ip-172-31-34-222:~/rsr/maven-web-application# mvn clean
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.mt:maven-web-application >--------------------
+[INFO] Building Maven Web Application 1.1-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ maven-web-application ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.640 s
+[INFO] Finished at: 2019-05-19T06:31:08Z
+[INFO] ------------------------------------------------------------------------
+root@ip-172-31-34-222:~/rsr/maven-web-application# mvn package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.mt:maven-web-application >--------------------
+[INFO] Building Maven Web Application 1.1-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/2.5.1/maven-compiler-plugin-2.5.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/2.5.1/maven-compiler-plugin-2.5.1.pom (7.9 kB at 10 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/2.5.1/maven-compiler-plugin-2.5.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/2.5.1/maven-compiler-plugin-2.5.1.jar (33 kB at 650 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-test/3.2.3.RELEASE/spring-test-3.2.3.RELEASE.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-test/3.2.3.RELEASE/spring-test-3.2.3.RELEASE.pom (6.1 kB at 203 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-core/3.2.3.RELEASE/spring-core-3.2.3.RELEASE.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-core/3.2.3.RELEASE/spring-core-3.2.3.RELEASE.pom (2.1 kB at 58 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom (18 kB at 510 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/5/commons-parent-5.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/5/commons-parent-5.pom (16 kB at 458 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.pom (1.5 kB at 25 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.pom (481 B at 12 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.1/hamcrest-parent-1.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.1/hamcrest-parent-1.1.pom (5.9 kB at 196 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/1.0/objenesis-1.0.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/1.0/objenesis-1.0.pom (853 B at 27 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-core/5.0.2.RELEASE/spring-core-5.0.2.RELEASE.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-core/5.0.2.RELEASE/spring-core-5.0.2.RELEASE.pom (4.0 kB at 106 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/Bismuth-SR4/reactor-bom-Bismuth-SR4.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/Bismuth-SR4/reactor-bom-Bismuth-SR4.pom (3.6 kB at 117 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.17.Final/netty-bom-4.1.17.Final.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.17.Final/netty-bom-4.1.17.Final.pom (7.9 kB at 240 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom (4.8 kB at 156 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-jcl/5.0.2.RELEASE/spring-jcl-5.0.2.RELEASE.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-jcl/5.0.2.RELEASE/spring-jcl-5.0.2.RELEASE.pom (1.9 kB at 52 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-web/5.0.2.RELEASE/spring-web-5.0.2.RELEASE.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-web/5.0.2.RELEASE/spring-web-5.0.2.RELEASE.pom (12 kB at 284 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-beans/5.0.2.RELEASE/spring-beans-5.0.2.RELEASE.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-beans/5.0.2.RELEASE/spring-beans-5.0.2.RELEASE.pom (2.7 kB at 105 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/5.0.2.RELEASE/spring-webmvc-5.0.2.RELEASE.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/5.0.2.RELEASE/spring-webmvc-5.0.2.RELEASE.pom (9.5 kB at 289 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-aop/5.0.2.RELEASE/spring-aop-5.0.2.RELEASE.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-aop/5.0.2.RELEASE/spring-aop-5.0.2.RELEASE.pom (2.5 kB at 85 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-context/5.0.2.RELEASE/spring-context-5.0.2.RELEASE.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-context/5.0.2.RELEASE/spring-context-5.0.2.RELEASE.pom (5.7 kB at 203 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-expression/5.0.2.RELEASE/spring-expression-5.0.2.RELEASE.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-expression/5.0.2.RELEASE/spring-expression-5.0.2.RELEASE.pom (1.7 kB at 63 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-test/3.2.3.RELEASE/spring-test-3.2.3.RELEASE.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/1.0/objenesis-1.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-core/5.0.2.RELEASE/spring-core-5.0.2.RELEASE.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-jcl/5.0.2.RELEASE/spring-jcl-5.0.2.RELEASE.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/1.0/objenesis-1.0.jar (29 kB at 519 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-web/5.0.2.RELEASE/spring-web-5.0.2.RELEASE.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-jcl/5.0.2.RELEASE/spring-jcl-5.0.2.RELEASE.jar (16 kB at 186 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-beans/5.0.2.RELEASE/spring-beans-5.0.2.RELEASE.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-test/3.2.3.RELEASE/spring-test-3.2.3.RELEASE.jar (456 kB at 1.1 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/5.0.2.RELEASE/spring-webmvc-5.0.2.RELEASE.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-beans/5.0.2.RELEASE/spring-beans-5.0.2.RELEASE.jar (655 kB at 1.3 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-aop/5.0.2.RELEASE/spring-aop-5.0.2.RELEASE.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-aop/5.0.2.RELEASE/spring-aop-5.0.2.RELEASE.jar (361 kB at 529 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-expression/5.0.2.RELEASE/spring-expression-5.0.2.RELEASE.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-web/5.0.2.RELEASE/spring-web-5.0.2.RELEASE.jar (1.2 MB at 1.7 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-context/5.0.2.RELEASE/spring-context-5.0.2.RELEASE.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/5.0.2.RELEASE/spring-webmvc-5.0.2.RELEASE.jar (783 kB at 1.1 MB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-core/5.0.2.RELEASE/spring-core-5.0.2.RELEASE.jar (1.2 MB at 1.6 MB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-expression/5.0.2.RELEASE/spring-expression-5.0.2.RELEASE.jar (263 kB at 344 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.jar (1.5 MB at 1.9 MB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-context/5.0.2.RELEASE/spring-context-5.0.2.RELEASE.jar (1.1 MB at 1.2 MB/s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ maven-web-application ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ubuntu/rsr/maven-web-application/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ maven-web-application ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.pom (2.3 kB at 85 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/1.0/maven-toolchain-1.0.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/1.0/maven-toolchain-1.0.pom (3.4 kB at 122 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.9.1/plexus-compiler-api-1.9.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.9.1/plexus-compiler-api-1.9.1.pom (867 B at 31 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.9.1/plexus-compiler-1.9.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.9.1/plexus-compiler-1.9.1.pom (3.8 kB at 128 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom (3.0 kB at 121 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom (19 kB at 665 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.9.1/plexus-compiler-manager-1.9.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.9.1/plexus-compiler-manager-1.9.1.pom (692 B at 18 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.9.1/plexus-compiler-javac-1.9.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.9.1/plexus-compiler-javac-1.9.1.pom (688 B at 24 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.9.1/plexus-compilers-1.9.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.9.1/plexus-compilers-1.9.1.pom (1.2 kB at 48 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/1.0/maven-toolchain-1.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.9.1/plexus-compiler-javac-1.9.1.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.9.1/plexus-compiler-manager-1.9.1.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.9.1/plexus-compiler-api-1.9.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/1.0/maven-toolchain-1.0.jar (33 kB at 823 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.9.1/plexus-compiler-manager-1.9.1.jar (4.6 kB at 93 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.9.1/plexus-compiler-javac-1.9.1.jar (14 kB at 286 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.9.1/plexus-compiler-api-1.9.1.jar (21 kB at 357 kB/s)
+[INFO] Compiling 1 source file to /home/ubuntu/rsr/maven-web-application/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ maven-web-application ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ubuntu/rsr/maven-web-application/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ maven-web-application ---
+[INFO] Compiling 1 source file to /home/ubuntu/rsr/maven-web-application/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ maven-web-application ---
+[INFO] Surefire report directory: /home/ubuntu/rsr/maven-web-application/target/surefire-reports
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (2.4 kB at 89 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (2.3 kB at 73 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 kB at 1.2 MB/s)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.mt.TestController
+May 19, 2019 6:31:48 AM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/],methods=[GET]}" onto public java.lang.String com.mt.HelloWorldController.hello(org.springframework.ui.ModelMap)
+May 19, 2019 6:31:48 AM org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter initControllerAdviceCache
+INFO: Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@35fb3008
+May 19, 2019 6:31:48 AM org.springframework.mock.web.MockServletContext log
+INFO: Initializing Spring FrameworkServlet ''
+May 19, 2019 6:31:48 AM org.springframework.web.servlet.FrameworkServlet initServletBean
+INFO: FrameworkServlet '': initialization started
+May 19, 2019 6:31:48 AM org.springframework.web.servlet.FrameworkServlet initServletBean
+INFO: FrameworkServlet '': initialization completed in 3 ms
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.07 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ maven-web-application ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [maven-web-application] in [/home/ubuntu/rsr/maven-web-application/target/maven-web-application]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/home/ubuntu/rsr/maven-web-application/src/main/webapp]
+[INFO] Webapp assembled in [94 msecs]
+[INFO] Building war: /home/ubuntu/rsr/maven-web-application/target/maven-web-application.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.602 s
+[INFO] Finished at: 2019-05-19T06:31:49Z
+[INFO] ------------------------------------------------------------------------
+root@ip-172-31-34-222:~/rsr/maven-web-application# ls
+Jenkinsfile-backup      Jenkinsfile-bakcupmarch15  mithuntechnologiespipeLine  project.yaml  target
+Jenkinsfile-backup26th  Jenkinsfile-mt             pom.xml                     src
+root@ip-172-31-34-222:~/rsr/maven-web-application# cd target/
+root@ip-172-31-34-222:~/rsr/maven-web-application/target# ls
+classes            generated-test-sources  maven-web-application      surefire-reports
+generated-sources  maven-archiver          maven-web-application.war  test-classes
+root@ip-172-31-34-222:~/rsr/maven-web-application/target# pwd
+/home/ubuntu/rsr/maven-web-application/target
+root@ip-172-31-34-222:~/rsr/maven-web-application/target# pwd
+/home/ubuntu/rsr/maven-web-application/target
+root@ip-172-31-34-222:~/rsr/maven-web-application/target# cd
+root@ip-172-31-34-222:~# cd opt
+bash: cd: opt: No such file or directory
+root@ip-172-31-34-222:~# cd /opt
+root@ip-172-31-34-222:/opt# ls
+apache-maven-3.6.0.zip     apache-tomcat-9.0.20         jdk-8u211-linux-x64.rpm    jdk-8u211-linux-x64.rpm.2
+apache-maven-3.6.0.zipapt  apache-tomcat-9.0.20.tar.gz  jdk-8u211-linux-x64.rpm.1
+root@ip-172-31-34-222:/opt# cd apache-tomcat-9.0.20/
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20# ls
+BUILDING.txt  CONTRIBUTING.md  LICENSE  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  bin  conf  lib  logs  temp  webapps  work
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20# cd webapps/
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/webapps# ls
+ROOT  docs  examples  host-manager  manager  target
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/webapps# pwd
+/opt/apache-tomcat-9.0.20/webapps
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/webapps# 
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/webapps# 
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/webapps# 
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/webapps# ls
+ROOT  docs  examples  host-manager  manager  target
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/webapps# ls
+ROOT  docs  examples  host-manager  manager  target
+root@ip-172-31-34-222:/opt/apache-tomcat-9.0.20/webapps# Connection to ec2-18-221-91-104.us-east-2.compute.amazonaws.com closed by remote host.
+Connection to ec2-18-221-91-104.us-east-2.compute.amazonaws.com closed.
+vidyadhar@vidyadhar-Lenovo-G580:~$ 
+

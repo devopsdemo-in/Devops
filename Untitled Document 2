@@ -1,0 +1,23 @@
+git reset --mixed commit id
+git add . or * -A
+git commit -m "message" file-name
+git log
+git show cid
+git reset --soft cid
+git reset head file-name
+git reset --mixed cid
+
+git log --oneline
+git log -2
+git log --oneline -4
+git log --author-{username}
+git log --since=yyy-mm-dd
+git log --until=yy-mm-dd
+
+
+
+data base details
+data base fecth
+data base creation
+aws
+python
