@@ -31,11 +31,11 @@ cd /opt
 echo 'Jenkins Installation started.'
 echo '-----------------------------'
 sudo yum -y install wget
-sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
-sudo yum install jenkins -y
+    sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+    sudo yum install jenkins -y
 
-sudo systemctl start jenkins.service
+    sudo systemctl start jenkins.service
 
 #(OR)
 #service jenkins start

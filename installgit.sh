@@ -28,7 +28,7 @@
 
 	git --version
 
-	#git config --global user.name "Mithun Technologies"
-	#git config --global user.email "devopstrainingblr@gmail.com"
+	#git config --global user.name "sushant"
+	#git config --global user.email "sushantpedhapalli@gmail.com"
 	#git config --list
 	
